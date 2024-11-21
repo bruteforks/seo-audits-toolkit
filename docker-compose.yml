@@ -183,7 +183,7 @@ services:
     - "redis-server"
     - "--maxmemory ${REDIS_MEMORY_MAX}"
     - "--maxmemory-policy allkeys-lru"
-    - "--logfile ${REDIS_LOG_FILE}"
+    # - "--logfile ${REDIS_LOG_FILE}"
     restart: unless-stopped
 
 networks:
@@ -216,4 +216,4 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ${PWD}/shared/logs/redis  
+      device: ${PWD}/shared/logs/redis
